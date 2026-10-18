@@ -1,0 +1,60 @@
+
+# Secrets
+.env
+.env.*
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Large LiDAR and raster datasets
+data/**/*.laz
+data/**/*.las
+data/**/*.copc.laz
+data/**/*.tif
+data/**/*.tiff
+data/**/*.ply
+
+# Model checkpoints and weights
+models/**/*.pth
+models/**/*.pt
+models/**/*.ckpt
+models/**/*.safetensors
+
+# Temporary files
+*.tmp
+*.log
+# Generated outputs: keep out of Git by default
+outputs/
+
+# Allow selected lightweight reports and evidence
+!outputs/
+!outputs/reports/
+outputs/reports/*
+!outputs/reports/phase3_final_status.json
+!outputs/reports/phase3_full_test_results.txt
+!outputs/reports/unified_site_profile_callable.json
+!outputs/reports/autzen_50m_grid_summary.json
+!outputs/reports/slope_risk_indicator.json
+!outputs/reports/terrain_metrics.csv
+
+# Ignore generated outputs by default
+outputs/*
+
+# Allow selected lightweight reports
+!outputs/reports/
+outputs/reports/*
+!outputs/reports/phase3_final_status.json
+!outputs/reports/phase3_full_test_results.txt
+!outputs/reports/unified_site_profile_callable.json
+!outputs/reports/autzen_50m_grid_summary.json
+!outputs/reports/slope_risk_indicator.json
+!outputs/reports/terrain_metrics.csv
+
+# Ignore downloaded datasets
+data/

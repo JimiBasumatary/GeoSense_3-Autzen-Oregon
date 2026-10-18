@@ -1,0 +1,34 @@
+{
+  "study_area": "Autzen Stadium area, Eugene, Oregon, USA",
+  "input_raster": "data\\lidar\\processed\\autzen_slope.tif",
+  "slope_unit": "degrees",
+  "valid_cell_count": 1344049,
+  "slope_min_degrees": 0.0011,
+  "slope_mean_degrees": 4.1116,
+  "slope_max_degrees": 75.275,
+  "slope_classes": {
+    "low_slope_0_to_5_degrees": {
+      "valid_cell_count": 1049139,
+      "percentage_of_valid_cells": 78.058
+    },
+    "moderate_slope_5_to_15_degrees": {
+      "valid_cell_count": 214563,
+      "percentage_of_valid_cells": 15.964
+    },
+    "steep_slope_15_to_30_degrees": {
+      "valid_cell_count": 67997,
+      "percentage_of_valid_cells": 5.059
+    },
+    "very_steep_slope_30_degrees_or_more": {
+      "valid_cell_count": 12350,
+      "percentage_of_valid_cells": 0.919
+    }
+  },
+  "interpretation": "Exploratory terrain-screening indicator based on slope classes. The class thresholds are descriptive and are not validated hazard, landslide, accessibility, or safety thresholds.",
+  "limitations": [
+    "Results depend on DEM resolution and slope-processing settings.",
+    "Slope alone cannot establish landslide or other hazard risk.",
+    "No field validation or hazard inventory was used.",
+    "Percentages describe valid raster cells, not the entire study area."
+  ]
+}

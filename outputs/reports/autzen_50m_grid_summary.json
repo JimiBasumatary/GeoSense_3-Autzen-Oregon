@@ -1,0 +1,26 @@
+{
+  "study_area": "Autzen LiDAR dataset extent",
+  "source_file": "D:\\GeoSense_Phase3\\data\\lidar\\processed\\autzen_classified_hag.laz",
+  "horizontal_crs": "EPSG:2992",
+  "horizontal_coordinate_units": "US survey feet",
+  "grid_size_m": 50.0,
+  "grid_size_ft": 164.04166666666666,
+  "grid_anchor": "Minimum X and Y of the input LiDAR extent",
+  "input_finite_xy_point_count": 10653336,
+  "grid_rows": 29,
+  "grid_columns": 21,
+  "occupied_grid_cells": 602,
+  "cells_with_building_points": 88,
+  "cells_with_vegetation_points": 508,
+  "building_height_unit": "metres",
+  "vegetation_metric": "Cell occupancy by Class 5 points, not validated canopy-cover area.",
+  "limitations": [
+    "Grid origin is anchored to the input point-cloud extent.",
+    "Only occupied cells are written to the CSV.",
+    "Building HAG statistics depend on the quality of the existing HAG field.",
+    "Negative HAG values are retained in the summary statistics.",
+    "Class 5 occupancy is a vegetation-presence proxy, not canopy-cover percentage.",
+    "No building footprints or independent canopy boundaries are used."
+  ],
+  "csv_output": "D:\\GeoSense_Phase3\\outputs\\reports\\autzen_50m_grid_metrics.csv"
+}

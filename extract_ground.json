@@ -1,0 +1,14 @@
+
+{
+  "pipeline": [
+    "data/lidar/raw/autzen-classified.copc.laz",
+    {
+      "type": "filters.range",
+      "limits": "Classification[2:2]"
+    },
+    {
+      "type": "writers.las",
+      "filename": "data/lidar/processed/autzen_ground.laz"
+    }
+  ]
+}

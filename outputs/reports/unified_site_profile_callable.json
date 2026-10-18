@@ -1,0 +1,247 @@
+{
+  "project": "GeoSense Agent - Phase III",
+  "study_area": "Autzen Stadium area, Eugene, Oregon, USA",
+  "generated_utc": "2026-10-18T05:04:54.015627+00:00",
+  "profile_type": "Unified LiDAR and Street View profile",
+  "lidar": {
+    "original_point_cloud": {
+      "file": "data\\lidar\\raw\\autzen-classified.copc.laz",
+      "point_count": 10653336,
+      "point_format": "<PointFormat(7, 0 bytes of extra dims)>",
+      "version": "1.4",
+      "crs": "COMPD_CS[\"NAD83 / Oregon GIC Lambert (ft) + NAVD88 height (ftUS)\",PROJCS[\"NAD83 / Oregon GIC Lambert (ft)\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",41.75],PARAMETER[\"central_meridian\",-120.5],PARAMETER[\"standard_parallel_1\",43],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",1312335.958],PARAMETER[\"false_northing\",0],UNIT[\"foot\",0.3048,AUTHORITY[\"EPSG\",\"9002\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"2992\"]],VERT_CS[\"NAVD88 height (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Gravity-related height\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]",
+      "bounds": {
+        "x_min": 635577.79,
+        "y_min": 848882.15,
+        "z_min": 406.14,
+        "x_max": 639003.73,
+        "y_max": 853537.66,
+        "z_max": 615.26
+      },
+      "scale": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "offset": [
+        637290.75,
+        851209.9,
+        510.7
+      ]
+    },
+    "ground_point_cloud": {
+      "file": "data\\lidar\\processed\\autzen_ground.laz",
+      "point_count": 6909405,
+      "point_format": "<PointFormat(7, 0 bytes of extra dims)>",
+      "version": "1.4",
+      "crs": "COMPD_CS[\"NAD83 / Oregon GIC Lambert (ft) + NAVD88 height (ftUS)\",PROJCS[\"NAD83 / Oregon GIC Lambert (ft)\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",41.75],PARAMETER[\"central_meridian\",-120.5],PARAMETER[\"standard_parallel_1\",43],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",1312335.958],PARAMETER[\"false_northing\",0],UNIT[\"foot\",0.3048,AUTHORITY[\"EPSG\",\"9002\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"2992\"]],VERT_CS[\"NAVD88 height (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Gravity-related height\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]",
+      "bounds": {
+        "x_min": 635577.79,
+        "y_min": 848882.15,
+        "z_min": 406.56,
+        "x_max": 639003.5,
+        "y_max": 853537.66,
+        "z_max": 482.58
+      },
+      "scale": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "offset": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "terrain": {
+    "dem": {
+      "file": "data\\lidar\\processed\\autzen_dem.tif",
+      "width_pixels": 1143,
+      "height_pixels": 1553,
+      "band_count": 1,
+      "crs": "COMPD_CS[\"NAD83 / Oregon GIC Lambert (ft) + NAVD88 height (ftUS)\",PROJCS[\"NAD83 / Oregon GIC Lambert (ft)\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",41.75],PARAMETER[\"central_meridian\",-120.5],PARAMETER[\"standard_parallel_1\",43],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",1312335.958],PARAMETER[\"false_northing\",0],UNIT[\"foot\",0.3048,AUTHORITY[\"EPSG\",\"9002\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"2992\"]],VERT_CS[\"NAVD88 height (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Gravity-related height\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]",
+      "pixel_size": [
+        3.0,
+        3.0
+      ],
+      "bounds": {
+        "left": 635576.62,
+        "bottom": 848880.05,
+        "right": 639005.62,
+        "top": 853539.05
+      },
+      "valid_cells": 1399589,
+      "nodata": -9999.0,
+      "minimum": 406.73,
+      "maximum": 482.19000000000005,
+      "mean": 423.29777759931426,
+      "standard_deviation": 6.922870428131546,
+      "valid_cell_percent": 78.85
+    },
+    "hillshade": {
+      "file": "data\\lidar\\processed\\autzen_hillshade.tif",
+      "width_pixels": 1143,
+      "height_pixels": 1553,
+      "band_count": 1,
+      "crs": "COMPD_CS[\"NAD83 / Oregon GIC Lambert (ft) + NAVD88 height (ftUS)\",PROJCS[\"NAD83 / Oregon GIC Lambert (ft)\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",41.75],PARAMETER[\"central_meridian\",-120.5],PARAMETER[\"standard_parallel_1\",43],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",1312335.958],PARAMETER[\"false_northing\",0],UNIT[\"foot\",0.3048,AUTHORITY[\"EPSG\",\"9002\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"2992\"]],VERT_CS[\"NAVD88 height (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Gravity-related height\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]",
+      "pixel_size": [
+        3.0,
+        3.0
+      ],
+      "bounds": {
+        "left": 635576.62,
+        "bottom": 848880.05,
+        "right": 639005.62,
+        "top": 853539.05
+      },
+      "valid_cells": 1344049,
+      "nodata": 0.0,
+      "minimum": 1.0,
+      "maximum": 255.0,
+      "mean": 179.48723967652964,
+      "standard_deviation": 15.1655339809522,
+      "valid_cell_percent": 75.72
+    },
+    "slope": {
+      "file": "data\\lidar\\processed\\autzen_slope.tif",
+      "width_pixels": 1143,
+      "height_pixels": 1553,
+      "band_count": 1,
+      "crs": "COMPD_CS[\"NAD83 / Oregon GIC Lambert (ft) + NAVD88 height (ftUS)\",PROJCS[\"NAD83 / Oregon GIC Lambert (ft)\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",41.75],PARAMETER[\"central_meridian\",-120.5],PARAMETER[\"standard_parallel_1\",43],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",1312335.958],PARAMETER[\"false_northing\",0],UNIT[\"foot\",0.3048,AUTHORITY[\"EPSG\",\"9002\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"2992\"]],VERT_CS[\"NAVD88 height (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Gravity-related height\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]",
+      "pixel_size": [
+        3.0,
+        3.0
+      ],
+      "bounds": {
+        "left": 635576.62,
+        "bottom": 848880.05,
+        "right": 639005.62,
+        "top": 853539.05
+      },
+      "valid_cells": 1344049,
+      "nodata": -9999.0,
+      "minimum": 0.0010507347760722041,
+      "maximum": 75.27495574951172,
+      "mean": 4.111586093902588,
+      "standard_deviation": 5.866086483001709,
+      "valid_cell_percent": 75.72
+    },
+    "aspect": {
+      "file": "data\\lidar\\processed\\autzen_aspect.tif",
+      "width_pixels": 1143,
+      "height_pixels": 1553,
+      "band_count": 1,
+      "crs": "COMPD_CS[\"NAD83 / Oregon GIC Lambert (ft) + NAVD88 height (ftUS)\",PROJCS[\"NAD83 / Oregon GIC Lambert (ft)\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",41.75],PARAMETER[\"central_meridian\",-120.5],PARAMETER[\"standard_parallel_1\",43],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",1312335.958],PARAMETER[\"false_northing\",0],UNIT[\"foot\",0.3048,AUTHORITY[\"EPSG\",\"9002\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"2992\"]],VERT_CS[\"NAVD88 height (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Gravity-related height\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]",
+      "pixel_size": [
+        3.0,
+        3.0
+      ],
+      "bounds": {
+        "left": 635576.62,
+        "bottom": 848880.05,
+        "right": 639005.62,
+        "top": 853539.05
+      },
+      "valid_cells": 1344049,
+      "nodata": -9999.0,
+      "minimum": 0.0,
+      "maximum": 359.99884033203125,
+      "mean": 182.45953369140625,
+      "standard_deviation": 106.80777740478516,
+      "valid_cell_percent": 75.72
+    }
+  },
+  "bounding_box_analysis": {
+    "bounds": {
+      "xmin": 637000.0,
+      "ymin": 851000.0,
+      "xmax": 637100.0,
+      "ymax": 851100.0
+    },
+    "coordinate_system": "EPSG:2992 horizontal; elevations in US survey feet",
+    "area_sq_ft": 10000.0,
+    "coverage": {
+      "lidar_intersects": true,
+      "lidar_fully_covers_bbox": true,
+      "lidar_coverage_status": "full",
+      "lidar_overlap_area_sq_ft": 10000.0,
+      "lidar_overlap_fraction": 1.0,
+      "lidar_covered": true,
+      "dem_available": true,
+      "dem_intersects": true,
+      "dem_fully_covers_bbox": true,
+      "dem_coverage_status": "full",
+      "dem_overlap_fraction": 1.0,
+      "dem_has_valid_cells": true,
+      "slope_available": true,
+      "slope_intersects": true,
+      "slope_fully_covers_bbox": true,
+      "slope_coverage_status": "full",
+      "slope_overlap_fraction": 1.0,
+      "slope_has_valid_cells": true
+    },
+    "metrics": {
+      "classification_point_counts": {
+        "2": 6177,
+        "5": 4
+      },
+      "total_selected_point_count": 6181,
+      "ground_point_count": 6177,
+      "building_point_count": 0,
+      "high_vegetation_point_count": 4,
+      "ground_elevation_ft": {
+        "minimum": 421.71999999999997,
+        "maximum": 425.82,
+        "mean": 423.65052128865136
+      },
+      "building_point_elevation_range_ft": null,
+      "dem": {
+        "valid_cell_count": 1089,
+        "minimum": 421.87781084771467,
+        "maximum": 425.6379228505926,
+        "mean": 423.6760993022185,
+        "standard_deviation": 0.8429927184349523
+      },
+      "slope": {
+        "valid_cell_count": 1089,
+        "minimum": 0.0909145250916481,
+        "maximum": 10.987082481384277,
+        "mean": 2.692530870437622,
+        "standard_deviation": 1.6787240505218506
+      }
+    },
+    "limitations": [
+      "Coverage describes rectangular dataset bounds, not actual point density or valid data at every location.",
+      "Building-point elevation range is not building height.",
+      "Canopy cover and impervious-surface area are not calculated from point counts alone."
+    ]
+  },
+  "streetview": {
+    "image": "141300064660795.jpg",
+    "scene_composition": {
+      "road": 26.759,
+      "sidewalk": 2.934,
+      "building": 8.458,
+      "vegetation": 43.014,
+      "sky": 2.948,
+      "car": 13.878
+    },
+    "walkability_score": 36.031782866120395,
+    "primary_rank": 18,
+    "walkability_alternative": 28.7340746741211,
+    "alternative_rank": 16,
+    "score_type": "sample-relative preliminary proxy"
+  },
+  "spatial_matching": {
+    "status": "not_verified",
+    "note": "The selected street image has not been spatially matched to a LiDAR bounding box. Do not interpret these sources as measurements of the same exact location."
+  },
+  "limitations": [
+    "Street scene classes are model predictions, not verified ground truth.",
+    "Walkability score is a preliminary sample-relative proxy, not a validated safety score.",
+    "LiDAR summary statistics describe the source dataset and are not site-specific unless a bounding-box analysis is performed.",
+    "Street imagery and LiDAR have not been spatially matched."
+  ]
+}

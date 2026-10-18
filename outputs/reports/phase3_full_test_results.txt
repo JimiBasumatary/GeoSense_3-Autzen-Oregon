@@ -1,0 +1,6 @@
+GeoSense Phase 3 - Full Test Suite
+Command: python -m pytest -q
+Result: 33 passed, 4 subtests passed
+Runtime: 10.94 seconds
+Status: PASS
+Note: The experimental HAG script was renamed to hag_alternative_experiment.py to prevent automatic pytest collection. The existing experimental LiDAR output was preserved; this run did not rerun that experiment.

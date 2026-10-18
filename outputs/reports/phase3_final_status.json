@@ -1,0 +1,54 @@
+{
+  "project": "GeoSense Phase 3",
+  "study_area": "Autzen Stadium area, Eugene, Oregon, USA",
+  "automated_tests": {
+    "command": "python -m pytest -q tests",
+    "latest_result": "33 passed, 4 subtests passed",
+    "latest_runtime_seconds": 10.45,
+    "coordinate_conversion_failure_reproduced": false,
+    "note": "The full independent tests directory passed on the latest run. The separate experimental HAG script was not included."
+  },
+  "lidar": {
+    "raw_point_count": 10653336,
+    "grid_metrics_file": "outputs/reports/autzen_50m_grid_metrics.csv",
+    "grid_summary_file": "outputs/reports/autzen_50m_grid_summary.json"
+  },
+  "hag_comparison": {
+    "report": "outputs/reports/hag_count8_50ft_test_comparison.json",
+    "coordinate_records_matched": true,
+    "original_negative_hag_points": 265309,
+    "experimental_negative_hag_points": 130673,
+    "median_difference_ft": 0.0,
+    "mean_difference_ft": -0.6037190956761413,
+    "p90_absolute_difference_ft": 0.22051225692661092,
+    "points_difference_over_1ft": 206405,
+    "limitation": "Diagnostic comparison only; fewer negative values do not prove greater accuracy."
+  },
+  "sam_segmentation": {
+    "model": "SAM ViT-B",
+    "image": "data/aerial/autzen_naip_06m_rgb.tif",
+    "image_dimensions_pixels": [
+      1740,
+      2366
+    ],
+    "mask_count": 58,
+    "device": "CPU",
+    "runtime_seconds": 82.86,
+    "cuda_available": false,
+    "metadata": "outputs/sam_georeferenced_06m/autzen_sam_metadata.json",
+    "overlay": "outputs/sam_georeferenced_06m/autzen_sam_overlay.jpg"
+  },
+  "roof_volume_validation": {
+    "status": "Not independently validated",
+    "limitations": [
+      "Image-to-LiDAR registration is not independently verified.",
+      "SAM masks are image segments, not verified roof footprints.",
+      "Area-times-height values are diagnostic proxies, not validated building volumes."
+    ]
+  },
+  "remaining_work": [
+    "Safely resolve the experimental HAG test script collection conflict.",
+    "Capture and organize final evidence screenshots.",
+    "Complete report/documentation and clearly state scientific limitations."
+  ]
+}

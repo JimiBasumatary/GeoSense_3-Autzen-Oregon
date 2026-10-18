@@ -1,0 +1,14 @@
+
+{
+  "pipeline": [
+    "data/lidar/processed/autzen_ground.laz",
+    {
+      "type": "writers.gdal",
+      "filename": "data/lidar/processed/autzen_dem.tif",
+      "resolution": 3,
+      "output_type": "idw",
+      "dimension": "Z",
+      "gdaldriver": "GTiff"
+    }
+  ]
+}

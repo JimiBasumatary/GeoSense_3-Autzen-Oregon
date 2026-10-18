@@ -1,0 +1,145 @@
+# GEOSENSE AGENT — PHASE III
+
+## EXERCISE 2: LIDAR HEIGHT-ABOVE-GROUND PROCESSING AND 3D VISUALISATION
+
+### 1. AIM
+
+To process a classified LiDAR point cloud using PDAL, calculate Height Above Ground (HAG), preserve the original point classifications, generate class-specific 3D visualisations, and evaluate the processing workflow using automated tests.
+
+### 2. STUDY AREA
+
+Autzen Stadium area, Eugene, Oregon, USA.
+
+### 3. SOFTWARE AND LIBRARIES USED
+
+1. Python 3.11
+2. PDAL 2.9.3
+3. laspy
+4. NumPy
+5. Open3D 0.19.0
+6. SciPy
+7. pytest
+8. JSON and pathlib modules
+
+### 4. DATASETS USED
+
+1. Original classified LiDAR point cloud: `data/lidar/raw/autzen-classified.copc.laz`
+2. Processed LiDAR with HAG: `data/lidar/processed/autzen_classified_hag.laz`
+3. Ground-classified LiDAR: `data/lidar/processed/autzen_ground.laz`
+4. Vegetation point cloud: `outputs/lidar_3d/autzen_vegetation_3d.ply`
+5. Building point cloud: `outputs/lidar_3d/autzen_buildings_3d.ply`
+6. Water point cloud: `outputs/lidar_3d/autzen_water_3d.ply`
+7. Pipeline summary: `outputs/reports/pdal_pipeline_summary.json`
+8. Automated test results: `outputs/reports/exercise2_test_results.txt`
+
+### 5. METHODOLOGY
+
+**Step 1: Inspect the original LiDAR dataset.**
+
+The original classified COPC/LAZ point cloud was inspected to determine the point count, coordinate reference system, elevation units, and classification distribution.
+
+**Step 2: Calculate Height Above Ground.**
+
+PDAL's `filters.hag_nn` filter was applied to calculate the `HeightAboveGround` dimension using class 2 ground points as the reference. The output was written to a separate processed LiDAR file.
+
+**Step 3: Preserve original classifications.**
+
+The SMRF classification filter was omitted because the source point cloud was already classified. The original and processed points were matched using their XYZ coordinates.
+
+**Step 4: Validate the processed point cloud.**
+
+The output was checked for point count, HAG dimension, finite numerical values, negative HAG values, and classification consistency.
+
+**Step 5: Generate class-specific 3D visualisations.**
+
+Open3D was used to create separate visualisations for vegetation (class 5), buildings (class 6), and water (class 9). A maximum of 250,000 points per class was used for each displayed sample.
+
+**Step 6: Validate visualisation files.**
+
+The generated PLY files were reopened using Open3D to confirm that the files were readable and contained points.
+
+**Step 7: Review building-height estimates.**
+
+Existing reports were inspected to compare exploratory estimates based on DEM elevations and nearby ground points. These estimates were treated as point-wise estimates rather than validated individual building heights.
+
+**Step 8: Execute automated tests.**
+
+The project's pytest suite was executed to check the existing analysis modules and supporting outputs.
+
+### 6. RESULTS AND OBSERVATIONS
+
+**Original LiDAR point count:** 10,653,336
+
+**Processed LiDAR point count:** 10,653,336
+
+**Ground-classified points (class 2):** 6,909,405
+
+**Vegetation points (class 5):** 2,613,807
+
+**Building points (class 6):** 343,181
+
+**Water points (class 9):** 355,339
+
+**HAG dimension:** Present in the processed output.
+
+**Non-finite HAG values:** 0
+
+**Negative HAG values:** 265,309
+
+**Minimum HAG:** −34.61 ft
+
+**Maximum HAG:** 191.01 ft
+
+The coordinate-based comparison matched all 10,653,336 processed points to original points within 0.001 coordinate units. No classification mismatches were found among the matched points.
+
+Three class-specific PLY files were generated for vegetation, buildings, and water. Each validated visualisation file contained 250,000 points.
+
+The automated test suite reported 33 passed tests and 4 passed subtests.
+
+### 7. OUTPUT FILES
+
+1. `src/phase3_lidar/pdal_pipeline.py`
+2. `data/lidar/processed/autzen_classified_hag.laz`
+3. `data/lidar/processed/autzen_hag_test_10ft.laz`
+4. `outputs/reports/pdal_pipeline_summary.json`
+5. `outputs/lidar_3d/autzen_vegetation_3d.ply`
+6. `outputs/lidar_3d/autzen_buildings_3d.ply`
+7. `outputs/lidar_3d/autzen_water_3d.ply`
+8. `outputs/reports/exercise2_test_results.txt`
+
+### 8. LIMITATIONS
+
+1. The HAG output contains 265,309 negative values, which require interpretation before the dataset is used for quantitative height analysis.
+2. The presence of finite values does not independently establish physical accuracy.
+3. The minimum and maximum HAG values should be examined in their spatial context before being interpreted as real surface heights.
+4. The 3D PLY files are sampled visualisations and do not contain the complete original point populations.
+5. Building-height estimates are exploratory point-wise estimates, not validated measurements of individual buildings.
+6. Automated tests validate software behaviour and data consistency, but do not independently establish the physical accuracy of all LiDAR measurements.
+
+### 9. CONCLUSION
+
+The Phase III LiDAR workflow successfully processed 10,653,336 points, calculated the Height Above Ground dimension, and preserved the original classification labels when points were matched by coordinates. Three class-specific 3D visualisations were generated and validated. The automated test suite reported 33 passed tests and 4 passed subtests.
+
+The results demonstrate a functioning LiDAR processing and visualisation workflow. However, the negative HAG values and extreme heights require further quality assessment before the processed data can be considered fully validated for quantitative height analysis.
+
+### 10. HAG QUALITY ASSESSMENT
+
+A separate diagnostic script, `src/phase3_lidar/diagnose_hag_quality.py`, was created to assess Height Above Ground (HAG) values by classification. The script reads the processed LiDAR file and generates `outputs/reports/hag_quality_diagnostic.json` without modifying the point cloud.
+
+The diagnostic recorded 10,653,336 points, of which 265,309 (2.49%) had negative HAG values. The minimum HAG was −34.61 ft, and the maximum was 191.01 ft. No non-finite HAG values were found.
+
+The class-wise assessment identified the following negative HAG counts:
+
+- Class 0 (unclassified): 53,605
+- Class 2 (ground): 0
+- Class 5 (vegetation): 16,427
+- Class 6 (buildings): 62
+- Class 9 (water): 195,090
+
+The 20 most negative HAG points were all class 0. Their HAG values ranged from approximately −34.61 ft to −33.34 ft. The nearest class 2 ground points for these points were approximately 76–83 ft away horizontally. This suggests that the local ground reference may be unreliable at these locations, but the diagnostic does not prove the exact cause.
+
+A separate output generated with a 10 ft `max_distance` setting showed the same point count, negative HAG count, minimum HAG, and class-wise negative counts as the main output. The test therefore did not resolve the negative HAG values. The original and processed point clouds were not modified during this assessment.
+
+**Assessment:** The HAG calculation and diagnostic reporting completed successfully, but the physical accuracy of the negative values has not been established. Further spatial investigation is required before the dataset is considered fully validated for quantitative height analysis.
+
+**Diagnostic output:** `outputs/reports/hag_quality_diagnostic.json`
